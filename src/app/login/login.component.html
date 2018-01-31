@@ -1,3 +1,6 @@
-<form>
-  <input type="text" class="username">
-</form>
+
+<input [(ngModel)]="mediaService.username">
+<br>
+<input [(ngModel)]="mediaService.password" type="password">
+<br>
+<button (click)="mediaService.login()">Login</button>
