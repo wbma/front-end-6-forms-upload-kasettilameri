@@ -13,12 +13,14 @@ export class FrontComponent implements OnInit {
   constructor(private mediaService: MediaService, private router: Router) { }
 
   ngOnInit() {
-    this.mediaService.getUserData().subscribe(response => {
-      console.log('Welcome ' + response['full_name']);
-    }, (error: HttpErrorResponse) => {
-      console.log(error);
-      this.router.navigate(['login']);
-    });
+    if (localStorage.getItem('token') !== null) {
+      this.mediaService.getUserData().subscribe(response => {
+        console.log('Welcome ' + response['full_name']);
+      }, (error: HttpErrorResponse) => {
+        console.log(error);
+        this.router.navigate(['login']);
+      });
+    }
   }
 
 }

@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MediaService} from './services/media.service';
+import { UploadComponent } from './upload/upload.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {MediaService} from './services/media.service';
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-    DashboardComponent
+    DashboardComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
